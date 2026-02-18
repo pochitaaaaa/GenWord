@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Genword</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    
+    <!-- 1. Polyfills for MQTT.js (Crucial for Browser Support) -->
+    <script>
+      window.global = window;
+      window.process = { 
+        env: { NODE_ENV: 'production' }, 
+        nextTick: function(fn) { setTimeout(fn, 0); }
+      };
+    </script>
+    <!-- 2. Load MQTT Library Globally (Stable Method) -->
+    <script src="https://unpkg.com/mqtt@5.3.5/dist/mqtt.min.js"></script>
+
+    <style>
+      body {
+        font-family: 'VT323', monospace;
+        background-color: #5c94fc; /* Mario Sky Blue */
+        overflow: hidden; /* Prevent scrolling on mobile drag */
+        touch-action: none;
+      }
+      .font-retro {
+        font-family: 'Press Start 2P', cursive;
+      }
+      .mario-pattern {
+        background-image: radial-gradient(rgba(255, 255, 255, 0.2) 15%, transparent 16%),
+        radial-gradient(rgba(255, 255, 255, 0.2) 15%, transparent 16%);
+        background-size: 60px 60px;
+        background-position: 0 0, 30px 30px;
+        /* Opacity removed to keep content solid */
+      }
+      /* Custom Scrollbar for lists */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #fbd000; 
+        border: 2px solid #000;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
