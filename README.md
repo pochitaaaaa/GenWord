@@ -11,3 +11,7 @@ This game is powered by AI. Unlike regular word games with static lists, our AI 
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+
+## Website
+https://genword-693955981096.us-west1.run.app/
